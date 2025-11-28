@@ -2,410 +2,197 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>Consultoría en Ingeniería Eléctrica y Mecánica</title>
+    <title>AC Electric Consulting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Consultoría profesional en ingeniería eléctrica y mecánica para proyectos residenciales, comerciales e industriales. Diseño, revisión y optimización de sistemas.">
+    <meta name="description" content="Consultoría profesional en ingeniería eléctrica: diseño, revisión, estudios y supervisión para proyectos residenciales, comerciales e industriales.">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
+        body { color: #222; background-color: #f7f7f7; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0b3954, #087e8b); color: white; padding: 1.5rem 2rem; position: sticky; top: 0; z-index: 10; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+        nav .logo { font-size: 1.3rem; font-weight: 700; }
+        nav ul { list-style: none; display: flex; gap: 1rem; }
+        nav a { color: white; text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { text-decoration: underline; }
 
-        body {
-            color: #222;
-            background-color: #f7f7f7;
-            line-height: 1.6;
-        }
+        .hero { background: #0b3954; color: white; padding: 4rem 2rem; }
+        .hero-inner { max-width: 1100px; margin: 0 auto; }
+        .hero h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .btn-primary { display: inline-block; padding: 0.8rem 1.6rem; border-radius: 999px; border: none; cursor: pointer; font-size: 1rem; font-weight: 600; background: #ffb400; color: #222; text-decoration: none; }
+        .btn-primary:hover { opacity: 0.9; }
 
-        header {
-            background: linear-gradient(135deg, #0b3954, #087e8b);
-            color: white;
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+        main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+        section { margin-bottom: 3rem; }
+        h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #0b3954; }
 
-        header .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e3e3e3; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+        .card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; color: #0b3954; }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        .about { background: white; padding: 1.8rem; border-radius: 1rem; border: 1px solid #e3e3e3; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1rem;
-        }
+        .projects-list li { margin-bottom: 0.5rem; }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
+        .contact-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 2rem; }
+        form { display: grid; gap: 0.8rem; }
+        label { font-size: 0.9rem; font-weight: 600; }
+        input, textarea { width: 100%; padding: 0.6rem 0.8rem; border-radius: 0.5rem; border: 1px solid #ccc; font-size: 0.95rem; }
+        textarea { min-height: 120px; resize: vertical; }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .hero {
-            background: #0b3954;
-            color: white;
-            padding: 4rem 2rem;
-        }
-
-        .hero-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 2.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 0.8rem 1.6rem;
-            border-radius: 999px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            background: #ffb400;
-            color: #222;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        .hero-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            font-size: 0.95rem;
-        }
-
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 2rem 4rem;
-        }
-
-        section {
-            margin-bottom: 3rem;
-        }
-
-        section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #0b3954;
-        }
-
-        section p {
-            margin-bottom: 1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            border: 1px solid #e3e3e3;
-        }
-
-        .card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.15rem;
-            color: #0b3954;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .tag {
-            background: #e4f1f6;
-            color: #0b3954;
-            padding: 0.25rem 0.7rem;
-            border-radius: 999px;
-            font-size: 0.8rem;
-        }
-
-        .about {
-            background: white;
-            padding: 1.8rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            border: 1px solid #e3e3e3;
-        }
-
-        .projects-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-            gap: 2rem;
-        }
-
-        form {
-            display: grid;
-            gap: 0.8rem;
-        }
-
-        label {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.6rem 0.8rem;
-            border-radius: 0.5rem;
-            border: 1px solid #ccc;
-            font-size: 0.95rem;
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            font-size: 0.85rem;
-            color: #777;
-        }
+        footer { text-align: center; padding: 1.5rem; font-size: 0.9rem; color: #555; }
 
         @media (max-width: 800px) {
-            .hero-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            header {
-                position: static;
-            }
+            .hero-inner { text-align: center; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Consultoría Eléctrica y Mecánica</div>
-            <ul>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#sectores">Sectores</a></li>
-                <li><a href="#sobre">Sobre nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-inner">
-            <div>
-                <h1>Consultoría en Ingeniería Eléctrica y Mecánica</h1>
+<header>
+    <nav>
+        <div class="logo">AC Electric Consulting</div>
+        <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#sectores">Sectores</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <h1>Consultoría en Ingeniería Eléctrica</h1>
+        <p>Diseño, revisión, estudios y optimización de sistemas eléctricos para proyectos residenciales, comerciales e industriales.</p>
+        <a href="#contacto" class="btn-primary">Solicitar consultoría</a>
+    </div>
+</section>
+
+<main>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Diseño Eléctrico</h3>
                 <p>
-                    Diseño, revisión y optimización de proyectos eléctricos y mecánicos
-                    para el sector residencial, comercial e industrial.
+                    Planos eléctricos completos, diagramas unifilares, cálculo de cargas,
+                    caída de tensión, selección de protecciones y conductores.
                 </p>
-                <a href="#contacto" class="btn-primary">Solicita una consultoría</a>
             </div>
-            <div class="hero-card">
-                <h3>¿Qué te ofrecemos?</h3>
+
+            <div class="card">
+                <h3>Revisión y Supervisión</h3>
                 <p>
-                    Acompañamiento técnico especializado para reducir riesgos,
-                    optimizar costos y asegurar el cumplimiento normativo de tus proyectos.
+                    Revisión de planos existentes, supervisión de obra, verificación de cumplimiento de normativa
+                    y detección de riesgos eléctricos.
                 </p>
-                <ul style="margin-left: 1.1rem; margin-top: 0.5rem;">
-                    <li>Diseño y revisión de instalaciones.</li>
-                    <li>Estudios y diagnósticos técnicos.</li>
-                    <li>Asesoría independiente para la toma de decisiones.</li>
-                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Estudios Especializados</h3>
+                <p>
+                    Estudios de cortocircuito, arc flash, eficiencia energética,
+                    auditorías eléctricas y diagnóstico de fallas.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Asesoría Profesional</h3>
+                <p>
+                    Acompañamiento técnico en licitaciones, especificación de equipos,
+                    evaluación de tableros y análisis previos a compra de propiedades.
+                </p>
             </div>
         </div>
     </section>
 
-    <main>
-        <section id="servicios">
-            <h2>Servicios</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Ingeniería Eléctrica</h3>
-                    <p>
-                        Diseño y revisión de instalaciones eléctricas, cálculos de carga,
-                        selección de protecciones, estudios de eficiencia energética y
-                        cumplimiento de normativa vigente.
-                    </p>
-                    <div class="tag-list">
-                        <span class="tag">Diseño eléctrico</span>
-                        <span class="tag">Tableros</span>
-                        <span class="tag">Protecciones</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Ingeniería Mecánica</h3>
-                    <p>
-                        Análisis y diseño de sistemas mecánicos, ventilación, climatización,
-                        selección de equipos y optimización de consumo energético.
-                    </p>
-                    <div class="tag-list">
-                        <span class="tag">HVAC</span>
-                        <span class="tag">Equipos mecánicos</span>
-                        <span class="tag">Eficiencia</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Asesoría y Supervisión</h3>
-                    <p>
-                        Peritajes técnicos, supervisión de obra, evaluación de riesgos
-                        y acompañamiento en negociaciones con proveedores y contratistas.
-                    </p>
-                    <div class="tag-list">
-                        <span class="tag">Peritajes</span>
-                        <span class="tag">Supervisión</span>
-                        <span class="tag">Gestión de proyectos</span>
-                    </div>
-                </div>
+    <section id="sectores">
+        <h2>Sectores que atendemos</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Residencial</h3>
+                <p>Casas, apartamentos y condominios que requieren soluciones seguras y eficientes.</p>
             </div>
-        </section>
 
-        <section id="sectores">
-            <h2>Sectores que atendemos</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Residencial</h3>
-                    <p>
-                        Casas, condominios y edificios de apartamentos que requieren
-                        soluciones seguras, eficientes y adaptadas al usuario final.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Comercial</h3>
-                    <p>
-                        Oficinas, locales, plazas comerciales y restaurantes,
-                        con énfasis en confiabilidad y continuidad del servicio.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Industrial</h3>
-                    <p>
-                        Plantas de producción, bodegas y centros de distribución,
-                        donde la seguridad y la disponibilidad son críticas.
-                    </p>
-                </div>
+            <div class="card">
+                <h3>Comercial</h3>
+                <p>Oficinas, plazas comerciales, locales y restaurantes con alta demanda eléctrica.</p>
             </div>
-        </section>
 
-        <section id="sobre">
-            <h2>Sobre nosotros</h2>
-            <div class="about">
-                <p>
-                    Somos una consultoría especializada en ingeniería eléctrica y mecánica,
-                    con experiencia en el diseño, revisión y optimización de proyectos en
-                    diferentes sectores.
-                </p>
-                <p>
-                    Nuestro enfoque combina criterios técnicos, normativos y económicos
-                    para que puedas tomar decisiones informadas y reducir riesgos en tus proyectos.
-                </p>
-                <p>
-                    Creemos en una ingeniería clara, transparente y orientada a resultados.
+            <div class="card">
+                <h3>Industrial</h3>
+                <p>Plantas, bodegas y centros de producción donde la confiabilidad es crítica.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre AC Electric Consulting</h2>
+        <div class="about">
+            <p>
+                Somos una consultoría especializada exclusivamente en Ingeniería Eléctrica,
+                con experiencia en diseño, revisión, estudios avanzados y evaluación de proyectos 
+                en múltiples sectores. Nuestro enfoque combina seguridad, eficiencia y cumplimiento normativo.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Proyectos recientes</h2>
+        <ul class="projects-list">
+            <li>Diseño eléctrico completo para edificio comercial.</li>
+            <li>Revisión y actualización de tableros principales en planta industrial.</li>
+            <li>Auditoría eléctrica con recomendaciones de reducción de consumo.</li>
+            <li>Supervisión técnica en proyecto residencial de alta demanda.</li>
+        </ul>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="contact-grid">
+            <div>
+                <form>
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" placeholder="Escribí tu consulta o proyecto" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Enviar mensaje</button>
+                </form>
+            </div>
+
+            <div>
+                <p>¿Tenés un proyecto o necesitás asesoría técnica? Con gusto te ayudamos.</p>
+                <p style="margin-top: 0.8rem;">
+                    <strong>Email:</strong> tu-correo@tudominio.com<br>
+                    <strong>WhatsApp:</strong> +506 XXXX-XXXX
                 </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>Experiencia y proyectos</h2>
-            <ul class="projects-list">
-                <li>Revisión de diseño eléctrico y mecánico para edificio de oficinas.</li>
-                <li>Optimización de consumo energético en planta industrial.</li>
-                <li>Diseño de tableros eléctricos y sistemas de protección para proyecto comercial.</li>
-                <li>Asesoría técnica para ampliación de sistemas de climatización en edificio corporativo.</li>
-            </ul>
-        </section>
+</main>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <div class="contact-grid">
-                <div>
-                    <form action="#" method="post">
-                        <div>
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div>
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
-                        </div>
-                        <div>
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente sobre tu proyecto o consulta" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Enviar mensaje</button>
-                    </form>
-                </div>
-                <div>
-                    <p>
-                        ¿Tienes un proyecto en mente o necesitás una segunda opinión técnica?
-                        Escríbenos y con gusto coordinamos una llamada o reunión.
-                    </p>
-                    <p style="margin-top: 0.8rem;">
-                        <strong>Correo:</strong> tu-correo@tudominio.com<br>
-                        <strong>Teléfono / WhatsApp:</strong> +506 XXXX-XXXX
-                    </p>
-                    <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #555;">
-                        *Respetamos tu tiempo y tu proyecto. Todas las consultas son atendidas de forma confidencial.*
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
+<footer>
+    © <span id="year"></span> AC Electric Consulting. Todos los derechos reservados.
+</footer>
 
-    <footer>
-        © <span id="year"></span> Consultoría en Ingeniería Eléctrica y Mecánica. Todos los derechos reservados.
-    </footer>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-    <script>
-        // Actualiza el año automáticamente
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
